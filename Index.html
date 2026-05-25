@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emirul's Projects Hub</title>
+    <!-- Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            /* Smooth animated gradient background */
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #0f172a);
+            background-size: 400% 400%;
+            animation: gradient-x 15s ease infinite;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism utility classes */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 3D Tilt container setup */
+        .tilt-card {
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            will-change: transform;
+        }
+        
+        .tilt-card-content {
+            transform: translateZ(30px); /* Pushes content forward for 3D effect */
+        }
+
+        /* Ambient background orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: float 10s ease-in-out infinite;
+        }
+        .orb-1 { top: 10%; left: 10%; width: 300px; height: 300px; background: #6366f1; }
+        .orb-2 { bottom: 10%; right: 10%; width: 400px; height: 400px; background: #ec4899; animation-delay: -5s; }
+        .orb-3 { top: 50%; left: 50%; width: 250px; height: 250px; background: #10b981; animation-delay: -2s; transform: translate(-50%, -50%); }
+    </style>
+</head>
+<body class="antialiased flex flex-col items-center justify-center p-4 sm:p-8 relative">
+
+    <!-- Background decorative orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-lg z-10 flex flex-col items-center relative mt-8 mb-12">
+        
+        <!-- Profile Header -->
+        <header class="flex flex-col items-center text-center mb-10 w-full">
+            <div class="w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 mb-4 shadow-[0_0_30px_rgba(168,85,247,0.4)] animate-float">
+                <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-tr from-indigo-300 to-pink-300">
+                    E
+                </div>
+            </div>
+            <h1 class="text-3xl font-bold text-white mb-2 tracking-wide">Emirul's Projects</h1>
+            <p class="text-gray-300 text-sm max-w-xs leading-relaxed">
+                Welcome to my interactive portfolio. Discover my latest web applications and educational tools below.
+            </p>
+        </header>
+
+        <!-- Links Section -->
+        <div class="w-full flex flex-col gap-5">
+
+            <!-- Link 1: Malay Tajwid Class (Main) -->
+            <a href="https://emirulayman.github.io/MalayTajwidClass/" target="_blank" rel="noopener noreferrer" 
+               class="tilt-card block w-full rounded-2xl p-5 glass-panel border-emerald-500/30 hover:border-emerald-400/60 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] bg-gradient-to-r from-emerald-900/20 to-transparent group cursor-pointer">
+                <div class="tilt-card-content flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-500/30 transition-all duration-300">
+                            <!-- Book Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        </div>
+                        <div>
+                            <h2 class="font-semibold text-lg text-emerald-50 group-hover:text-white transition-colors">Malay Tajwid Class</h2>
+                            <p class="text-xs text-emerald-200/70 mt-0.5">Learn Tajwid in Bahasa Melayu</p>
+                        </div>
+                    </div>
+                    <!-- Indicator Badge -->
+                    <div class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/50 text-emerald-300 text-xs font-semibold shadow-[0_0_10px_rgba(16,185,129,0.4)] animate-pulse whitespace-nowrap">
+                        ⭐ Must Try!
+                    </div>
+                </div>
+            </a>
+
+            <!-- Link 2: English Tajwid Class -->
+            <a href="https://emirulayman.github.io/EnglishTajwidClass/" target="_blank" rel="noopener noreferrer" 
+               class="tilt-card block w-full rounded-2xl p-5 glass-panel border-blue-500/30 hover:border-blue-400/60 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] bg-gradient-to-r from-blue-900/20 to-transparent group cursor-pointer">
+                <div class="tilt-card-content flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:bg-blue-500/30 transition-all duration-300">
+                            <!-- Globe Book Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/><path d="M8 11h8"/></svg>
+                        </div>
+                        <div>
+                            <h2 class="font-semibold text-lg text-blue-50 group-hover:text-white transition-colors">English Tajwid Class</h2>
+                            <p class="text-xs text-blue-200/70 mt-0.5">Comprehensive English guide</p>
+                        </div>
+                    </div>
+                    <!-- Indicator Badge -->
+                    <div class="px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/50 text-blue-300 text-xs font-semibold whitespace-nowrap">
+                        🔥 Popular
+                    </div>
+                </div>
+            </a>
+
+            <!-- Divider -->
+            <div class="w-full flex items-center py-2 opacity-50">
+                <div class="flex-grow h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent"></div>
+                <span class="px-3 text-xs tracking-widest uppercase text-gray-400 font-semibold">Labs</span>
+                <div class="flex-grow h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent"></div>
+            </div>
+
+            <!-- Link 3: Solar System Model -->
+            <a href="https://emirulayman.github.io/SolarSystemModel/" target="_blank" rel="noopener noreferrer" 
+               class="tilt-card block w-full rounded-2xl p-5 glass-panel border-purple-500/20 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] group cursor-pointer opacity-90 hover:opacity-100">
+                <div class="tilt-card-content flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 group-hover:scale-110 group-hover:bg-purple-500/20 transition-all duration-300">
+                            <!-- Planet Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M5 5l1.5 1.5"/><path d="M17.5 17.5L19 19"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M5 19l1.5-1.5"/><path d="M17.5 6.5L19 5"/></svg>
+                        </div>
+                        <div>
+                            <h2 class="font-medium text-lg text-purple-50 group-hover:text-white transition-colors">Solar System Model</h2>
+                        </div>
+                    </div>
+                    <!-- Indicator Badge -->
+                    <div class="px-2.5 py-1 rounded bg-purple-500/10 border border-purple-500/30 text-purple-300 text-[10px] font-bold uppercase tracking-wider whitespace-nowrap flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-ping inline-block"></span>
+                        Beta
+                    </div>
+                </div>
+            </a>
+
+            <!-- Link 4: Alchemy Lab -->
+            <a href="https://emirulayman.github.io/AlchemyLab/" target="_blank" rel="noopener noreferrer" 
+               class="tilt-card block w-full rounded-2xl p-5 glass-panel border-orange-500/20 hover:border-orange-400/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.2)] group cursor-pointer opacity-90 hover:opacity-100">
+                <div class="tilt-card-content flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 group-hover:scale-110 group-hover:bg-orange-500/20 transition-all duration-300">
+                            <!-- Flask Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M5.52 16h12.96"/></svg>
+                        </div>
+                        <div>
+                            <h2 class="font-medium text-lg text-orange-50 group-hover:text-white transition-colors">Alchemy Lab</h2>
+                        </div>
+                    </div>
+                    <!-- Indicator Badge -->
+                    <div class="px-2.5 py-1 rounded bg-orange-500/10 border border-orange-500/30 text-orange-300 text-[10px] font-bold uppercase tracking-wider whitespace-nowrap flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+                        Developing
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        
+        <footer class="mt-12 text-center text-xs text-gray-500">
+            &copy; <script>document.write(new Date().getFullYear())</script> Emirul's Projects. All rights reserved.
+        </footer>
+    </main>
+
+    <!-- Interactive Vanilla JS Script for 3D Tilt Effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.tilt-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    
+                    // Get mouse position relative to the card
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    // Find the center of the card
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    // Calculate rotation based on mouse distance from center
+                    // Lower multiplier = less extreme rotation
+                    const rotateX = ((y - centerY) / centerY) * -12; 
+                    const rotateY = ((x - centerX) / centerX) * 12;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                });
+                
+                // Reset styling when mouse leaves
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
